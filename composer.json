@@ -1,0 +1,14 @@
+{
+    "name": "mkkn/sd09_composer",
+    "authors": [
+        {
+            "name": "mikakane",
+            "email": "mikakane2@gmail.com"
+        }
+    ],
+    "require": {
+        "nesbot/carbon": "^1.21",
+        "monolog/monolog": "^1.20",
+        "guzzlehttp/guzzle": "^6.2"
+    }
+}
