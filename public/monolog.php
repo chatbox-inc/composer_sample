@@ -15,7 +15,12 @@ $_SESSION["count"] = $count+1;
 
 // create a log channel
 $log = new Logger('logger');
-$log->pushHandler(new StreamHandler(__DIR__.'/../app.log', Logger::DEBUG));
+
+$loglevel = Logger::DEBUG;
+//$loglevel = Logger::ALERT; // より弱い出力
+$path = __DIR__.'/../app.log';
+$handler = new StreamHandler($handler, $loglevel);
+$log->pushHandler($handler);
 
 $log->debug("IPアドレスは、{$_SERVER["REMOTE_ADDR"]} です。");
 $log->info("$count 回目のアクセスです。 ");

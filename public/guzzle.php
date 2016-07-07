@@ -4,7 +4,8 @@ require __DIR__."/../vendor/autoload.php";
 use GuzzleHttp\Client;
 
 $client = new GuzzleHttp\Client();
-$res = $client->request('GET', 'http://connpass.com/api/v1/event/?keyword=php&count=100');
+$url = 'http://connpass.com/api/v1/event/?keyword=php&count=100';
+$res = $client->request('GET', $url);
 
 if($res->getStatusCode() !== 200){
     echo "Request Failed";

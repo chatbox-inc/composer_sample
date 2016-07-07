@@ -14,7 +14,8 @@ $langs = [
 $promises = [];
 
 foreach ($langs as $lang) {
-    $promise = $client->requestAsync('GET', "http://connpass.com/api/v1/event/?keyword=$lang&ym=201506&count=100");
+    $url = "http://connpass.com/api/v1/event/?keyword=$lang&ym=201506&count=100";
+    $promise = $client->requestAsync('GET', $url);
     $promise->then(function($res)use($lang){
         if($res->getStatusCode() !== 200){
             echo "Request Failed";
